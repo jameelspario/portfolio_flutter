@@ -26,7 +26,7 @@ class Projects extends StatelessWidget {
                 alignment: Alignment.centerLeft,
                 child: Heading(
                   margin: EdgeInsets.symmetric(vertical: 16.0),
-                  text: "Projects",
+                  text: Strings.projects,
                 )),
             18.0.spaceY,
             Wrap(

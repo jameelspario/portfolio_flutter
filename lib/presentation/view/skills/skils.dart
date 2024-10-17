@@ -24,7 +24,7 @@ class Skills extends StatelessWidget {
                 alignment: Alignment.centerLeft,
                 child: Heading(
                   margin: EdgeInsets.symmetric(vertical: 16.0),
-                  text: "Skills",
+                  text: Strings.skills,
                 )),
             Row(
               children: [

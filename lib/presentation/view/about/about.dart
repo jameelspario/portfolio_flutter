@@ -22,7 +22,7 @@ class About extends StatelessWidget {
                   alignment: Alignment.centerLeft,
                   child: Heading(
                     margin: EdgeInsets.symmetric(vertical: 16.0),
-                    text: "About",
+                    text: Strings.about,
                   )),
               Text(loremIpsum(words: 60)),
             ],

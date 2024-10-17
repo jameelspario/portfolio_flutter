@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/presentation/view/intro/social_icons.dart';
 import 'package:portfolio/utils/extensios.dart';
 
+import '../../../utils/const.dart';
+
 class IntroDesktop extends StatelessWidget {
   const IntroDesktop({super.key});
 
@@ -15,11 +17,11 @@ class IntroDesktop extends StatelessWidget {
       child: Row(
         // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          const Column(
+           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "Hi\nI'm Jameel\nAndroid Developer",
+                Strings.intro1,
                 style: TextStyle(
                   fontSize: 30.0,
                   fontWeight: FontWeight.bold,
@@ -31,7 +33,7 @@ class IntroDesktop extends StatelessWidget {
           18.0.spaceX,
           // Spacer(),
           Expanded(
-            child: Image.asset("assets/images/android1.png"),
+            child: Image.asset(Drawables.intro_img),
           )
         ],
       ),

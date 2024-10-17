@@ -28,7 +28,7 @@ class _ContactsState extends State<Contacts> {
                 alignment: Alignment.centerLeft,
                 child: Heading(
                   margin: EdgeInsets.symmetric(vertical: 16.0),
-                  text: "Contact Me",
+                  text: Strings.contacts_me,
                 )),
             18.0.spaceY,
           ],

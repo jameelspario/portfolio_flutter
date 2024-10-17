@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/utils/const.dart';
 import 'package:portfolio/utils/extensios.dart';
 
 
@@ -18,11 +19,11 @@ class Intro extends StatelessWidget {
           Center(
             child: SizedBox(
               width: 200.0,
-              child: Image.asset("assets/images/android1.png"),
+              child: Image.asset(Drawables.intro_img),
             ),
           ),
          const Text(
-            "Hi\nI'm Jameel\nAndroid Developer",
+            Strings.intro1,
             style: TextStyle(
               fontSize: 30.0,
               fontWeight: FontWeight.bold,
