@@ -3,6 +3,7 @@ import 'package:portfolio/presentation/view/intro/intro.dart';
 import 'package:portfolio/presentation/view/intro/intro_desktop.dart';
 import 'package:portfolio/utils/extensios.dart';
 
+import '../../../data/datas.dart';
 import '../../../utils/const.dart';
 import '../about/about.dart';
 import '../constacts/constacts.dart';
@@ -68,13 +69,12 @@ class _HomePageState extends State<HomePage> {
                       else
                         Intro(key: itemKeys[0]),
                       const Divider(),
-
                       /// About
                       About(key: itemKeys[1]),
                       //skills
                       Skills(key: itemKeys[2]),
                       //projects
-                      Projects(key: itemKeys[3]),
+                      Projects(key: itemKeys[3], itemsProjects: Datas.projects),
                       Contacts(key: itemKeys[4]),
                       Container(
                         height: 50,

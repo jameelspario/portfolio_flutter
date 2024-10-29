@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/presentation/view/projects/hirerickshaw/hirerickshaw_project.dart';
 
 import 'presentation/view/home/home_page.dart';
 import 'presentation/view/project_viewer/project_viewer.dart';
 import 'presentation/view/skills/flutter/flutter_pages.dart';
 import 'presentation/view/skills_viewer/skills_viewer.dart';
+import 'presentation/widgets/test_page.dart';
 import 'utils/const.dart';
 
 void main() {
@@ -26,17 +28,19 @@ class MyApp extends StatelessWidget {
         var uri = Uri.parse(settings.name ?? "");
         print(uri);
         if (settings.name == '/') {
-          // return MaterialPageRoute(builder: (context) => const HomePage());
-          return MaterialPageRoute(builder: (context) => const SkillsViewer());
+          return MaterialPageRoute(builder: (context) => const HomePage());
+          // return MaterialPageRoute(builder: (context) => const TestPage());
         }
         // Handle '/projects/:id'
         // var uri = Uri.parse(settings.name ?? "");
+        // >> /projects/:HireRickshaw
         print(uri);
         if (uri.pathSegments.length == 2 &&
             uri.pathSegments.first == 'projects') {
           var id = uri.pathSegments[1];
+          var it = settings.arguments;
           return MaterialPageRoute(
-              builder: (context) => ProjectViewer(subject: id));
+              builder: (context) => ProjectViewer(subject: id, item: it));
         }
 
         if (uri.pathSegments.length == 2 &&

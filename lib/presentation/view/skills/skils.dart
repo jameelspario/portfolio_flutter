@@ -4,20 +4,16 @@ import 'package:portfolio/utils/extensios.dart';
 
 import '../../../data/datas.dart';
 import '../../../utils/const.dart';
+import '../../../utils/utils.dart';
 import '../../widgets/heading.dart';
+import '../../widgets/my_layout_builder.dart';
 
 class Skills extends StatelessWidget {
   const Skills({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context, c) {
-      return Container(
-        margin: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 32.0),
-        constraints: BoxConstraints(
-            maxWidth: c.maxWidth >= Const.windowWidth
-                ? c.maxWidth * 0.7
-                : c.maxWidth),
+    return MyLayoutBuilder(
         child: Column(
           children: [
             const Align(
@@ -96,7 +92,6 @@ class Skills extends StatelessWidget {
           ],
         ),
       );
-    });
   }
 }
 
@@ -141,7 +136,7 @@ class MyChip extends StatelessWidget {
             Text(item['title']),
             if (item['hasData'] ?? false)
               const Padding(
-                padding:  EdgeInsets.only(left: 6.0),
+                padding: EdgeInsets.only(left: 6.0),
                 child: Icon(
                   Icons.info_outline_rounded,
                   size: 14,
@@ -150,7 +145,10 @@ class MyChip extends StatelessWidget {
               )
           ],
         ),
-        avatar: Image.asset(item['img']),
+        avatar: Image.asset(
+          item['img'],
+          color: item['color'] != null ? Utils.hexToColor(item['color']) : null,
+        ),
         elevation: 12.0,
         shadowColor: Colors.white10,
         backgroundColor:

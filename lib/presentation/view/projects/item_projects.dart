@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/utils/extensios.dart';
 
 import '../../../utils/const.dart';
+import '../../widgets/my_image.dart';
 
 class ItemProject extends StatelessWidget {
   const ItemProject({this.item, this.callLink, super.key});
@@ -10,7 +11,6 @@ class ItemProject extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-
         // height: 280,
         clipBehavior: Clip.antiAlias,
         decoration: BoxDecoration(
@@ -21,9 +21,8 @@ class ItemProject extends StatelessWidget {
           child: Stack(
             alignment: AlignmentDirectional.center,
             children: [
-              Image.asset("${item['img']}"),
+              Image.asset("${item['img']}", fit: BoxFit.contain,),
               ItemTop(item: item, callLink: callLink,),
-              
             ],
           ),
         ));
@@ -52,7 +51,9 @@ class ItemTop extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 8.0),
           child: Text(
             "${item['desc']}",
-            style: Theme.of(context).textTheme.labelSmall,
+            style: Theme.of(context).textTheme.labelSmall?.copyWith(
+              color: Colors.white70
+            ),
             maxLines: 3,
             softWrap: true,
             overflow: TextOverflow.ellipsis,
@@ -61,16 +62,19 @@ class ItemTop extends StatelessWidget {
         4.0.spaceY,
         Container(
           height: 30.0,
-          decoration: BoxDecoration(color: Colors.grey.shade900),
+          decoration: BoxDecoration(color: Colors.grey.shade900.withOpacity(0.4)),
           child: Row(children: [
             const Spacer(),
             for (final it in item['links']) ...[
               GestureDetector(
                 onTap: () => callLink?.call(it['url']),
-                child: Image.asset(
-                  "${it['img']}",
-                  width: 12.0,
-                  color: it['col'] != null ? Colors.white : null,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 4),
+                  child: MyImage.asset(
+                    "${it['img']}",
+                    width: 12.0,
+                    color: it['col'] != null ? Colors.white : null,
+                  ),
                 ),
               ),
               6.0.spaceX,

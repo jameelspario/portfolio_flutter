@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/utils/extensios.dart';
 
+import '../../../utils/const.dart';
 import '../skills/flutter/flutter_pages.dart';
 
 class SkillsViewer extends StatelessWidget {
@@ -26,6 +28,24 @@ class SkillsViewer extends StatelessWidget {
                     ),
                   ),
                 ],
+              ),
+              Container(
+                width: MediaQuery.sizeOf(context).width,
+                child: AspectRatio(
+                  aspectRatio: 5,
+                  child: Card(
+                    child: Center(
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          FlutterLogo(),
+                          16.0.spaceX,
+                          Text(Strings.flutter_tour),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
               ),
               const FlutterPages(),
             ],
