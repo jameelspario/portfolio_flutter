@@ -21,17 +21,17 @@ class Datas {
   ];
 
   static List langs = [
-    {"img": 'assets/images/java.png', "title": "Java"},
-    {"img": 'assets/images/kotlin.png', "title": "Kotlin"},
-    {"img": 'assets/images/flutter.png', "title": "Flutter"},
-    {"img": 'assets/images/dart.png', "title": "Dart"},
+    {"id":1,"img": 'assets/images/java.png', "title": "Java"},
+    {"id":2,"img": 'assets/images/kotlin.png', "title": "Kotlin"},
+    {"id":3,"img": 'assets/images/flutter.png', "title": "Flutter", "hasData":true},
+    {"id":4,"img": 'assets/images/dart.png', "title": "Dart"},
   ];
   static List skills = [
-    {"img": 'assets/images/java.png', "title": "Firebase"},
-    {"img": 'assets/images/kotlin.png', "title": "SDK"},
-    {"img": 'assets/images/flutter.png', "title": "Rest API"},
-    {"img": 'assets/images/dart.png', "title": "Webrtc"},
-    {"img": 'assets/images/dart.png', "title": "WebSocket"},
+    {"id":1, "img": 'assets/images/icon-firebase.png', "title": "Firebase"},
+    {"id":2,"img": 'assets/images/kotlin.png', "title": "SDK"},
+    {"id":3,"img": 'assets/images/flutter.png', "title": "Rest API"},
+    {"id":4,"img": 'assets/images/dart.png', "title": "Webrtc"},
+    {"id":5,"img": 'assets/images/dart.png', "title": "WebSocket"},
   ];
   static List ide = [
     {"img": 'assets/images/java.png', "title": "Android Studio"},
@@ -143,5 +143,12 @@ class Datas {
         }
       ]
     },
+  ];
+
+  static List flutter = [
+    {"title":"Home",},
+    {"title":"Container",},
+    {"title":"Card",},
+    {"title":"SingleChildScrollView",},
   ];
 }
