@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/config/routers.dart';
 import 'package:portfolio/presentation/view/intro/intro.dart';
 import 'package:portfolio/presentation/view/intro/intro_desktop.dart';
 import 'package:portfolio/utils/extensios.dart';
@@ -41,10 +42,9 @@ class _HomePageState extends State<HomePage> {
                 backgroundColor: Const.colorHeader,
                 child: MyDrawer(callback: (index) {
                   Navigator.pop(context);
-                    Scrollable.ensureVisible(itemKeys[index].currentContext!,
-                        duration: const Duration(milliseconds: 500));
-                
-                  }),
+                  Scrollable.ensureVisible(itemKeys[index].currentContext!,
+                      duration: const Duration(milliseconds: 500));
+                }),
               ),
         body: Container(
           child: Column(
@@ -74,7 +74,13 @@ class _HomePageState extends State<HomePage> {
                       //skills
                       Skills(key: itemKeys[2]),
                       //projects
-                      Projects(key: itemKeys[3], itemsProjects: Datas.projects),
+                      Projects(
+                        key: itemKeys[3],
+                        itemsProjects: Datas.projects,
+                        showMore: () {
+                          Navigator.pushNamed(context, Routers.projectMore);
+                        },
+                      ),
                       Contacts(key: itemKeys[4]),
                       Container(
                         height: 50,

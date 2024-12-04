@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 class ScreenshotCarousel extends StatefulWidget {
-  const ScreenshotCarousel({this.items = const [], super.key});
+  const ScreenshotCarousel(
+      {this.items = const [], this.ratio = 0.5, super.key});
 
   final List items;
+  final double ratio;
 
   @override
   _ScreenshotCarouselState createState() => _ScreenshotCarouselState();
@@ -17,8 +19,8 @@ class _ScreenshotCarouselState extends State<ScreenshotCarousel> {
 
   onNext(int index) {
     if (_pageController.hasClients) {
-      _pageController.animateToPage(
-          index, duration: Duration(milliseconds: 300), curve: Curves.easeIn);
+      _pageController.animateToPage(index,
+          duration: Duration(milliseconds: 300), curve: Curves.easeIn);
     }
   }
 
@@ -36,7 +38,7 @@ class _ScreenshotCarouselState extends State<ScreenshotCarousel> {
       children: [
         Flexible(
           child: AspectRatio(
-            aspectRatio: 0.5,
+            aspectRatio: widget.ratio,
             child: PageView.builder(
               controller: _pageController,
               itemCount: widget.items.length,
@@ -67,19 +69,19 @@ class _ScreenshotCarouselState extends State<ScreenshotCarousel> {
             ),
           ),
         ),
-        SizedBox(height: 16),
+        const SizedBox(height: 16),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: List.generate(widget.items.length, (index) {
             return GestureDetector(
-              onTap: (){
+              onTap: () {
                 setState(() {
                   currentIndex = index;
                 });
                 onNext(index);
               },
               child: Container(
-                margin: EdgeInsets.symmetric(horizontal: 4.0),
+                margin: const EdgeInsets.symmetric(horizontal: 4.0),
                 width: currentIndex == index ? 12.0 : 8.0,
                 height: currentIndex == index ? 12.0 : 8.0,
                 decoration: BoxDecoration(
@@ -90,7 +92,7 @@ class _ScreenshotCarouselState extends State<ScreenshotCarousel> {
             );
           }),
         ),
-        SizedBox(height: 16),
+        const SizedBox(height: 16),
       ],
     );
   }

@@ -17,7 +17,7 @@ class IntroDesktop extends StatelessWidget {
       child: Row(
         // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-           Column(
+           Column(crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
@@ -27,6 +27,7 @@ class IntroDesktop extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
+              24.0.spaceY,
               SocialIcons(),
             ],
           ),

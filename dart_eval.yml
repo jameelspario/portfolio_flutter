@@ -1,0 +1,3 @@
+# dart_eval.yaml
+entrypoints:
+  - lib/my_code_viewer.dart

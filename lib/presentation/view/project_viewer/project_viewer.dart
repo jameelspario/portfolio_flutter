@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/presentation/view/projects/hirerickshaw/hirerickshaw_project.dart';
 
-import '../../../config/routers.dart';
-import '../../../data/datas.dart';
 
 class ProjectViewer extends StatefulWidget {
   const ProjectViewer({this.subject, this.item, super.key});
@@ -20,21 +18,15 @@ class _ProjectViewerState extends State<ProjectViewer> {
     print(widget.subject);
     print(widget.item);
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text("${widget.subject}"),
-      // ),
       body: Builder(builder: (context) {
-        if (Routers.projectHR.contains(widget.subject)) {
-          return HirerickshawProject(
-              item: widget.item,
-              items: Datas.HRProject.map((e) => e['image']).toList());
+        List detail = [];
+        if(widget.item['detail']!=null){
+          detail = widget.item['detail'];
         }
-        if (Routers.projectTP.contains(widget.subject)) {
-          return HirerickshawProject(
-              item: widget.item,
-              items: Datas.TCProject.map((e) => e['image']).toList());
-        }
-        return Container();
+        return HirerickshawProject(
+            item: widget.item,
+            items: detail.map((e) => e['image']).toList());
+
       }),
     );
   }

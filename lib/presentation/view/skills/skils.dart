@@ -6,6 +6,7 @@ import '../../../data/datas.dart';
 import '../../../utils/const.dart';
 import '../../../utils/utils.dart';
 import '../../widgets/heading.dart';
+import '../../widgets/my_image.dart';
 import '../../widgets/my_layout_builder.dart';
 
 class Skills extends StatelessWidget {
@@ -145,7 +146,7 @@ class MyChip extends StatelessWidget {
               )
           ],
         ),
-        avatar: Image.asset(
+        avatar: MyImage.asset(
           item['img'],
           color: item['color'] != null ? Utils.hexToColor(item['color']) : null,
         ),
