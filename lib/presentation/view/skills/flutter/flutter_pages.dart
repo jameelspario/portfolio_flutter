@@ -86,7 +86,7 @@ class DescriptionBody extends StatelessWidget {
               Expanded(child: MyCodeEditor(codeController: codeController)),
               // VerticalDivider( color: Colors.white54,),
               // Expanded(child: MyCodeViewer()),
-              Expanded(child: ExampleState()),
+              // Expanded(child: ExampleState()),
             ],
           ),
         ],

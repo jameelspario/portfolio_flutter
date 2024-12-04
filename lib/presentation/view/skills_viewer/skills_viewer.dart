@@ -16,6 +16,7 @@ class SkillsViewer extends StatelessWidget {
         child:CustomScrollView(
           slivers: [
             SliverAppBar(
+              leading: Container(),
               expandedHeight: 100.0,
               pinned: true,
               flexibleSpace: LayoutBuilder(
