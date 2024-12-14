@@ -20,12 +20,25 @@ class Projects extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Heading(
+              const Heading(
                 margin: EdgeInsets.symmetric(vertical: 16.0),
                 text: Strings.projects,
               ),
-              GestureDetector(
-                  onTap: showMore, child: Text("Show More")),
+              TextButton(
+                onPressed: () => showMore?.call(),
+                child: const Row(
+                  children: [
+                    Text("More Projects"),
+                    SizedBox(
+                      width: 6,
+                    ),
+                    Icon(
+                      Icons.arrow_forward_ios_outlined,
+                      size: 14,
+                    )
+                  ],
+                ),
+              ),
             ],
           ),
           18.0.spaceY,
@@ -35,4 +48,3 @@ class Projects extends StatelessWidget {
     );
   }
 }
-
